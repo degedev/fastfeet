@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16.3
+    container_name: postgres
+    environment:
+      POSTGRES_DB: fastfeet
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: UTC
+    ports:
+      - "5432:5432"
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: fastfeet-api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/fastfeet
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
