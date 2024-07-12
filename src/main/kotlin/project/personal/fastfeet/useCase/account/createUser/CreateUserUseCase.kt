@@ -1,9 +1,11 @@
-package project.personal.fastfeet.useCase.createUser
+package project.personal.fastfeet.useCase.account.createUser
 
+import project.personal.fastfeet.annotation.UseCase
 import project.personal.fastfeet.entity.UserEntity
 import project.personal.fastfeet.exception.UserAlreadyExistsException
 import project.personal.fastfeet.repository.UsersRepository
 
+@UseCase
 class CreateUserUseCase(
     private val usersRepository: UsersRepository,
 ) {

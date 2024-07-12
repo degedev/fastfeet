@@ -1,4 +1,4 @@
-package project.personal.fastfeet.useCase.createUser
+package project.personal.fastfeet.useCase.account.createUser
 
 import io.kotest.assertions.throwables.shouldThrowExactly
 import io.kotest.matchers.shouldBe
@@ -24,6 +24,7 @@ internal class CreateUserUseCaseTest {
             longitude = input.longitude,
             vehiclePlate = input.vehiclePlate,
         )
+        every { usersRepository.existsByCpfOrVehiclePlate(input.cpf, input.vehiclePlate) } returns false
         every { usersRepository.save(any<UserEntity>()) } returns userEntity
         val subjectOutput = subject.execute(input)
         subjectOutput.cpf shouldBe input.cpf

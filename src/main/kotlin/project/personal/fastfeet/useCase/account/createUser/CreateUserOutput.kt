@@ -1,4 +1,4 @@
-package project.personal.fastfeet.useCase.createUser
+package project.personal.fastfeet.useCase.account.createUser
 
 data class CreateUserOutput(
     val cpf: String,
