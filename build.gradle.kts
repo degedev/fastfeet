@@ -3,10 +3,12 @@ plugins {
     val ktlintVersion = "12.1.1"
     val springDependencyManagementVersion = "1.1.5"
     val kotlinPluginsVersion = "2.0.0"
+    val koverVersion = "0.8.2"
 
     id("org.springframework.boot") version springBootVersion
     id("io.spring.dependency-management") version springDependencyManagementVersion
     id("org.jlleitschuh.gradle.ktlint") version ktlintVersion
+    id("org.jetbrains.kotlinx.kover") version koverVersion
     kotlin("plugin.jpa") version kotlinPluginsVersion
     kotlin("jvm") version kotlinPluginsVersion
     kotlin("plugin.spring") version kotlinPluginsVersion
